@@ -1,39 +1,31 @@
 # Maxime Vigier
 
-Docteur en biotechnologies (Université de Lorraine, 2022) en reconversion **Data Scientist**.
-2 ans de R&D en start-up (pilotage de projet, formulation, données d'essais) + certification **Data Scientist Liora × Mines Paris–PSL (RNCP)**.
+Docteur en biotechnologie (Université de Lorraine, 2022), reconverti en data science. Deux ans de R&D en start-up, puis la certification Data Scientist Liora x Mines Paris-PSL (titre RNCP Expert en data science, 2026).
 
-Je code des pipelines data reproductibles sur des questions que je comprends au niveau métier — biologie, santé, épidémiologie — sans sacrifier la rigueur statistique.
+Je construis des pipelines data reproductibles sur des sujets de santé que je connais côté biologie, en gardant la rigueur statistique : évaluation chiffrée, limites écrites, résultats négatifs assumés.
 
-📍 Bordeaux · Full remote, hybride ou freelance · maxime.vigier2@gmail.com
+Bordeaux · full remote, hybride ou freelance · maxime.vigier2@gmail.com
 
 ---
 
 ## Projets
 
-### 🧠 [alzheimer-gene-expression](https://github.com/MaximeVigier/alzheimer-gene-expression) · [démo](https://alzheimer-gene-expression-6ta5v8ejpemky3vltpszpk.streamlit.app/)
-Analyse d'expression différentielle (GSE5281, cortex entorhinal) comparant patients Alzheimer et témoins sains.
-Là où mon doctorat (lipides membranaires et Alzheimer, 1er auteur *Int J Mol Sci* 2024) rencontre le code : pipeline reproductible (`src/` modulaire, notebooks versionnés) sur une question de biologie que je maîtrise au niveau paillasse — chaque choix méthodologique est explicite et défendable.
+### [alzheimer-risk-rag](https://github.com/MaximeVigier/alzheimer-risk-rag)
+Assistant de questions-réponses sur les facteurs de risque d'Alzheimer, sourcé sur 1198 abstracts PubMed. Retrieval hybride dense + BM25 avec reranking (recall@10 = 0,86 contre 0,67 en dense seul), fidélité 0,925 mesurée avec RAGAS par un juge distinct du générateur, +88 % de correctness face au même LLM sans contexte. API FastAPI, Docker, 23 tests et CI GitHub Actions.
 
-### 🫁 [covid-radiography-benchmark](https://github.com/MaximeVigier/covid-radiography-benchmark)
-Benchmark de 13 modèles (SVM, Random Forest, 6 CNN maison, VGG16, InceptionV3, DenseNet) sur 4 classes de radiographies thoraciques (n=2084 en test).
-**91,1 % d'accuracy, 0,92 de macro-F1** avec DenseNet et un CNN maison à 5 blocs — étude d'ablation complète.
+### [covid-radiography-benchmark](https://github.com/MaximeVigier/covid-radiography-benchmark)
+Projet de certification mené à 4. Plus de 30 configurations (ML classique, CNN construits from scratch, transfer learning) comparées sur 4 classes de radiographies thoraciques (n = 2 084 en test) : 91,1 % d'accuracy et 0,92 de macro-F1 avec DenseNet et un CNN à 5 blocs. Étude d'ablation sur la profondeur et analyse du biais de source. Ma contribution personnelle est détaillée dans le README.
 
-### 🍽️ [nhanes-risque-cardiometabolique](https://github.com/MaximeVigier/nhanes-risque-cardiometabolique) · [démo](https://nhanes-risque-cardiometabolique-epczfzyrqcqgepmzzywbdw.streamlit.app/)
-Le syndrome métabolique est-il prédictible à partir de l'alimentation déclarée (NHANES, 3 cycles) ? Chaîne ML complète (régression logistique → ensembles → MLP Keras), interprétabilité SHAP, analyse en sous-groupes.
-Résultat assumé : un résultat négatif net et stable, pas maquillé en signal fort.
+### [grippe-france-prevision](https://github.com/MaximeVigier/grippe-france-prevision)
+Prévision hebdomadaire de l'incidence grippale en France (réseau Sentinelles, depuis 1990). STL, SARIMA, Fourier+ARIMA, ML et LSTM comparés par backtest à origine glissante. Fourier+ARIMA bat le naïf saisonnier au meilleur rapport qualité/coût, le deep learning n'apporte rien sur une série nationale seule.
 
-### 🤧 [grippe-france-prevision](https://github.com/MaximeVigier/grippe-france-prevision) · [démo](https://grippe-france-prevision-bxkv8ovpkvpjyyffpmykju.streamlit.app/)
-Prévision hebdomadaire de l'incidence grippale en France (réseau Sentinelles, 1984–2026). STL, SARIMA, Fourier+ARIMA, ML, LSTM — comparés sur un backtest à origine glissante.
-Fourier+ARIMA bat le naïf saisonnier au meilleur rapport qualité/coût ; le deep learning n'apporte rien sur une série nationale seule — dit sans détour.
+### [nhanes-risque-cardiometabolique](https://github.com/MaximeVigier/nhanes-risque-cardiometabolique)
+Le syndrome métabolique est-il prédictible à partir de l'alimentation déclarée (NHANES, 3 cycles) ? Chaîne ML complète, SHAP, analyse en sous-groupes. Le résultat est négatif et stable : à âge et catégorie sociale donnés, l'alimentation déclarée n'ajoute presque rien.
 
-Chaque projet ci-dessus : README complet (problème → données → méthode → résultats chiffrés → limites), tests, CI GitHub Actions, environnement figé.
+### [alzheimer-gene-expression](https://github.com/MaximeVigier/alzheimer-gene-expression)
+Expression génique différentielle dans le cortex entorhinal (GSE5281, 23 échantillons, 54 675 sondes). Pipeline modulaire, notebooks versionnés, choix méthodologiques explicités, limites discutées. Le sujet recoupe ma thèse.
 
 ---
 
 ## Compétences
-`Python` `pandas/numpy` `scikit-learn` `Keras/PyTorch` `SQL` `Streamlit` `Git/CI` `stats & design expérimental` `SHAP` · en consolidation : `Docker` `Cloud`
-
-## Autres dépôts
-[`peon`](https://github.com/MaximeVigier/peon) — agent orienté événements, architecture modulaire indépendante du LLM (exploration technique perso).
-[`token-dashboard`](https://github.com/MaximeVigier/token-dashboard) — dashboard local de suivi de consommation de tokens LLM.
+`Python` `pandas` `NumPy` `scikit-learn` `Keras` `SQL` `RAG / LLM` `FastAPI` `Docker` `GitHub Actions` `Streamlit` `statistiques et plans d'expérience`
